@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Aga's room</title>
+
+</head>
+<body class="theme light overflow-y-hidden">
+
+<div class="loading_screen"></div> 
+<div class="z-10 grainy"></div>
+
+<div class="flex relative h-screen">
+    <div class="z-10 fixed top-0 right-0 w-screen">
+        <div class="flex flex-row justify-end items-center gap-4 p-4">
+            <a href="https://github.com/agaef5">
+                <svg class="illustration drop-shadow-xl" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256"
+                style="fill:#000000;">
+                <g fill="#373534" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M15,3c-6.627,0 -12,5.373 -12,12c0,5.623 3.872,10.328 9.092,11.63c-0.056,-0.162 -0.092,-0.35 -0.092,-0.583v-2.051c-0.487,0 -1.303,0 -1.508,0c-0.821,0 -1.551,-0.353 -1.905,-1.009c-0.393,-0.729 -0.461,-1.844 -1.435,-2.526c-0.289,-0.227 -0.069,-0.486 0.264,-0.451c0.615,0.174 1.125,0.596 1.605,1.222c0.478,0.627 0.703,0.769 1.596,0.769c0.433,0 1.081,-0.025 1.691,-0.121c0.328,-0.833 0.895,-1.6 1.588,-1.962c-3.996,-0.411 -5.903,-2.399 -5.903,-5.098c0,-1.162 0.495,-2.286 1.336,-3.233c-0.276,-0.94 -0.623,-2.857 0.106,-3.587c1.798,0 2.885,1.166 3.146,1.481c0.896,-0.307 1.88,-0.481 2.914,-0.481c1.036,0 2.024,0.174 2.922,0.483c0.258,-0.313 1.346,-1.483 3.148,-1.483c0.732,0.731 0.381,2.656 0.102,3.594c0.836,0.945 1.328,2.066 1.328,3.226c0,2.697 -1.904,4.684 -5.894,5.097c1.098,0.573 1.899,2.183 1.899,3.396v2.734c0,0.104 -0.023,0.179 -0.035,0.268c4.676,-1.639 8.035,-6.079 8.035,-11.315c0,-6.627 -5.373,-12 -12,-12z"></path></g></g>
+                </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/agnieszka-furgalska-8a8538232">
+                <svg class="illustration drop-shadow-xl" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256"
+                style="fill:#000000;">
+                <g fill="#373534" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM17,20v19h-6v-19zM11,14.47c0,-1.4 1.2,-2.47 3,-2.47c1.8,0 2.93,1.07 3,2.47c0,1.4 -1.12,2.53 -3,2.53c-1.8,0 -3,-1.13 -3,-2.53zM39,39h-6c0,0 0,-9.26 0,-10c0,-2 -1,-4 -3.5,-4.04h-0.08c-2.42,0 -3.42,2.06 -3.42,4.04c0,0.91 0,10 0,10h-6v-19h6v2.56c0,0 1.93,-2.56 5.81,-2.56c3.97,0 7.19,2.73 7.19,8.26z"></path></g></g>
+                </svg>
+            </a>
+            
+            <a href="mailto:agafurgalska@wp.pl?subject=I want to contact with you!">
+                <svg class="illustration drop-shadow-xl" width="49" height="46" viewBox="0 0 49 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_143_97" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="46">
+                    <rect x="0.599976" y="0.5" width="48" height="45" fill="#373534"/>
+                    </mask>
+                    <g mask="url(#mask0_143_97)">
+                    <path d="M5.79165 42.6712C4.31044 42.6712 3.04826 42.1306 2.0051 41.0494C0.961987 39.9681 0.44043 38.6599 0.44043 37.1246V8.21783C0.44043 6.68255 0.962027 5.37429 2.00522 4.29306C3.04834 3.21182 4.3105 2.6712 5.79171 2.6712H43.0891C44.5704 2.6712 45.8325 3.21182 46.8757 4.29306C47.9188 5.37429 48.4404 6.68255 48.4404 8.21783V37.1246C48.4404 38.6599 47.9188 39.9681 46.8757 41.0494C45.8325 42.1306 44.5704 42.6712 43.0891 42.6712H5.79165ZM24.4404 25.736L43.0891 13.5458V8.21783L24.4404 20.4081L5.79165 8.21783V13.5458L24.4404 25.736Z" fill="#373534"/>
+                    </g>
+                    </svg> 
+            </a>
+                    
+            <svg class="illustration drop-shadow-xl" width="4" height="64" viewBox="0 0 4 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="Line 17" d="M2.40002 2L2.40002 62" stroke="#373534" stroke-width="3" stroke-linecap="round"/>
+                </svg>  
+            <svg class="illustration drop-shadow-xl" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_142_636" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="48">
+                <rect x="0.199951" width="48" height="48" fill="#373534"/>
+                </mask>
+                <g mask="url(#mask0_142_636)">
+                <path d="M19.795 42.0848C17.662 42.0848 15.8714 41.3585 14.4233 39.906C12.9752 38.4535 12.2511 36.662 12.2511 34.5315C12.2511 32.401 12.9752 30.6096 14.4233 29.1571C15.8714 27.7045 17.6651 26.9783 19.8043 26.9783C20.6796 26.9783 21.4789 27.1016 22.2021 27.3484C22.9253 27.5951 23.55 27.9442 24.0761 28.3957V5.90326H36.1859V12.8718H27.3576V34.5315C27.3576 36.662 26.6304 38.4535 25.1761 39.906C23.7218 41.3585 21.9281 42.0848 19.795 42.0848Z" fill="#373534"/>
+                </g>
+                </svg>                
+            <svg onclick="SwitchTheme()" class="illustration drop-shadow-xl"  width="49" height="50" viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_142_633" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="50">
+                <rect y="0.5" width="49" height="49" fill="#373534"/>
+                </mask>
+                <g mask="url(#mask0_142_633)">
+                <path d="M22.7646 26.7865C24.466 28.4878 26.329 29.951 28.3536 31.176C30.3783 32.401 32.5646 33.3538 34.9125 34.0344C33.6194 35.5656 32.0712 36.7396 30.2677 37.5563C28.4642 38.3729 26.5587 38.7812 24.551 38.7812C20.7399 38.7812 17.4903 37.4372 14.8021 34.749C12.1139 32.0608 10.7698 28.8111 10.7698 25C10.7698 22.9924 11.1781 21.0868 11.9948 19.2833C12.8115 17.4799 13.9854 15.9316 15.5167 14.6385C16.1972 16.9865 17.15 19.1727 18.375 21.1974C19.6 23.222 21.0632 25.0851 22.7646 26.7865ZM36.75 31.3802C36.2396 31.2441 35.7292 31.0995 35.2188 30.9464C34.7083 30.7932 34.2149 30.6146 33.7385 30.4104C34.2149 29.5938 34.5807 28.726 34.8359 27.8073C35.0911 26.8885 35.2188 25.9528 35.2188 25C35.2188 22.0056 34.1809 19.4705 32.1052 17.3948C30.0295 15.3191 27.4944 14.2813 24.5 14.2813C23.5472 14.2813 22.6115 14.4089 21.6927 14.6641C20.774 14.9193 19.9063 15.2851 19.0896 15.7615C18.9194 15.2851 18.7578 14.8002 18.6047 14.3068C18.4516 13.8134 18.3069 13.3115 18.1708 12.801C19.1576 12.2906 20.187 11.8993 21.2589 11.6271C22.3307 11.3549 23.4281 11.2188 24.551 11.2188C28.3622 11.2188 31.6118 12.5628 34.3 15.251C36.9882 17.9392 38.3323 21.1889 38.3323 25C38.3323 26.1229 38.1962 27.2203 37.924 28.2922C37.6517 29.3641 37.2604 30.3934 36.75 31.3802ZM22.9688 6.625V0.5H26.0313V6.625H22.9688ZM22.9688 49.5V43.375H26.0313V49.5H22.9688ZM38.5875 13.1073L36.3927 10.9125L40.7313 6.625L42.926 8.76875L38.5875 13.1073ZM8.26875 43.375L6.07396 41.2313L10.4125 36.8927L12.6073 39.0875L8.26875 43.375ZM42.875 26.5313V23.4688H49V26.5313H42.875ZM0 26.5313V23.4688H6.125V26.5313H0ZM40.7313 43.426L36.3927 39.0875L38.5875 36.8927L42.875 41.2313L40.7313 43.426ZM10.4125 13.1073L6.125 8.76875L8.26875 6.57396L12.6073 10.9125L10.4125 13.1073Z" fill="#373534"/>
+                </g>
+                </svg>          
+        </div> 
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div class="section" id="about">
+
+        <div class="relative h-screen max-w-[2000px] flex items-center g-0">
+
+            <div class="flex flex-col justify-start items-center md:mt-0 md:flex-row ">
+                <div class="p-0 bg-color-black  h-[20rem] w-[100vw] md:m-0 md:w-[40vw] md:h-[100vh]"></div>
+                <div class="z-[10] w-full p-4 bg-color-beige flex flex-col md: md:max-w-[50vw] md:p-8 md:gap-4 md:rounded-r-xl md:justify-center">
+                    <h2 class="mt-[-2.5rem] md:mt-4">So, who am I actually?</h2>
+                    <p>I am Aga, originally from Poland, <a class="bold" href="https://www.duolingo.com/profile/agaef5">language lover</a>
+                    <a class="bold" href="https://www.goodreads.com/user/show/160780355-agnieszka-furgalska">book</a>worm, 
+                    and games lover (board and <a class="bold" href="https://steamcommunity.com/profiles/76561198879110091/">video</a> ones!)
+                    Post Malone biggest fan, in free time I am trying 
+                    to make some animations - so long story short:</p> 
+                    <button id="playButton">I love to learn new stuff</button>
+                    <p class="mt-4 text-lg font-extrabold">Want to get in touch? <span>Contact me!</span></p>
+
+                    <!-- Spotify  -->
+                    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+                    <script>
+                          window.onSpotifyWebPlaybackSDKReady = () => {
+                              const token = 'BQAlOebG0BwUTHjog9gGLuykNRuk3QRWKqmhQmCSGMfO-BZ8-807x6komW6itdc5ERN7y9obpV-IOF8acT_8tpJUMAaZidNrZ6dcpvrwSKTfyYqgylnlwI6hoOq6r_--e04R8rfY9z-lxISzl7_m8sQGcwHotgXhgzqtG_RJBdocfPR9FAsIu7guGF4PnabXgQTt8Vzk7Y0KikKnf6EnI3Cycp8P'; // Replace with a valid access token
+                              const player = new Spotify.Player({
+                              name: 'Agas Room',
+                              getOAuthToken: callback => {
+                              callback(token);
+                              }
+                              });
+                  
+                                // Ready
+                              player.addListener('ready', ({ device_id }) => {
+                                  console.log('Ready with Device ID', device_id);
+                              });
+                  
+                              // Not Ready
+                              player.addListener('not_ready', ({ device_id }) => {
+                                  console.log('Device ID has gone offline', device_id);
+                              });
+                  
+                              player.addListener('initialization_error', ({ message }) => {
+                                  console.error(message);
+                              });
+                  
+                              player.addListener('authentication_error', ({ message }) => {
+                                  console.error(message);
+                              });
+                  
+                              player.addListener('account_error', ({ message }) => {
+                                  console.error(message);
+                              });
+                  
+                              player.connect();
+                              };
+
+
+                              const playButton = document.getElementById('playButton'); // Replace with your button's ID
+                                playButton.addEventListener('click', () => {
+                                    // Start playing your first playlist
+                                    player
+                                    .play({
+                                        uris: ['spotify:playlist:5GgQWohM5353YW3dxTrMz9'], // Replace with your playlist URI
+                                    })
+                                    .then(() => {
+                                        console.log('Playing playlist 1');
+                                    });
+                                });
+
+                    </script>
+                </div>
+            </div>
+            
+    
+        </div>
+
+        <div class="bottom_nav_bar">
+            <div class="buttons"></div> 
+
+            <div class="buttons items-end">
+                <div class="button" onClick="document.getElementById('home').scrollIntoView({ behavior:'smooth' });" >
+                    <p>Home</p>
+                    <svg class="illustration" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                        <mask id="mask0_144_188" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="37" height="37">
+                        <rect width="37" height="37" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_144_188)">
+                        <path d="M21.5 18.95L11.6 9.05002L13.75 6.90002L25.8 18.95L13.75 31L11.6 28.85L21.5 18.95Z" fill="#373534"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="button" onClick="document.getElementById('projects').scrollIntoView({ behavior:'smooth' });">
+                    <p>Projects</p>
+                    <svg class="illustration" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                        <mask id="mask0_144_182" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="37" height="37">
+                        <rect width="37" height="37" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_144_182)">
+                        <path d="M14.5499 18.95L4.6499 9.05001L6.7499 6.95001L18.7499 18.95L6.7499 30.95L4.6499 28.85L14.5499 18.95ZM27.1999 18.95L17.2999 9.05001L19.3999 6.95001L31.3999 18.95L19.3999 30.95L17.2999 28.85L27.1999 18.95Z" fill="#373534"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOME -->
+    <div class="section" id="home">
+        
+        <div class="flex justify-center items-center relative h-screen max-w-[2000px]">
+                <div class="flex flex-col items-center md:items-start">
+                    <h1>Hi, I'm Aga!</h1>
+                    <div class="bg-color-black w-[80%] h-1 mb-6 "> </div>
+                    <h3>Front-End Developer Intern</h3>
+                    <h3>aspiring animator & cat mom</h3>
+                    <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
+                </div>
+                
+                <div class="desk_illustration hidden md:block">
+                    <svg width="518" height="407" viewBox="0 0 518 407" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="big_illustration">
+                        <g id="table" filter="url(#filter0_d_177_10)">
+                        <rect x="4" y="388" width="510" height="11" rx="5" fill="#373534"/>
+                        </g>
+                        <g id="items_on_table">
+                        <g id="computer" filter="url(#filter1_d_177_10)">
+                        <rect id="stand" x="323.332" y="342.027" width="47.8295" height="46.4227" fill="#1B1918"/>
+                        <g id="screen">
+                        <rect x="216.419" y="191.504" width="262.359" height="159.666" rx="5" fill="#1B1918"/>
+                        <rect x="216.919" y="192.004" width="261.359" height="158.666" rx="4.5" stroke="#D9D9D9" stroke-opacity="0.5"/>
+                        </g>
+                        <path id="display_screen" d="M227.563 201.852H469.041C469.869 201.852 470.541 202.523 470.541 203.352V324.552C470.541 325.381 469.869 326.052 469.041 326.052H227.563C226.735 326.052 226.063 325.381 226.063 324.552V203.352C226.063 202.523 226.735 201.852 227.563 201.852Z" fill="#F1E9D2" stroke="black"/>
+                        </g>
+                        <g id="books">
+                        <g id="fifth-left" filter="url(#filter2_i_177_10)">
+                        <rect x="162.259" y="319.519" width="16.881" height="68.9307" fill="#8E3535"/>
+                        </g>
+                        <g id="fourth-left" filter="url(#filter3_i_177_10)">
+                        <rect x="146.082" y="313.892" width="16.1776" height="74.5577" fill="#FFCD20"/>
+                        </g>
+                        <g id="third_left" filter="url(#filter4_i_177_10)">
+                        <rect x="120.057" y="313.892" width="26.0249" height="74.5577" fill="#4B5320"/>
+                        </g>
+                        <g id="second_left" filter="url(#filter5_i_177_10)">
+                        <rect x="107.396" y="319.519" width="12.6607" height="68.9307" fill="#8E3535"/>
+                        </g>
+                        <g id="first_left" filter="url(#filter6_i_177_10)">
+                        <rect x="87.7017" y="313.892" width="19.6945" height="74.5577" fill="#433128"/>
+                        </g>
+                        <g id="laying_bottom" filter="url(#filter7_i_177_10)">
+                        <rect x="11.0337" y="373.678" width="76.6678" height="14.7709" fill="#B29533"/>
+                        </g>
+                        <g id="laying_top" filter="url(#filter8_i_177_10)">
+                        <rect x="22.2876" y="364.535" width="65.4139" height="9.14387" fill="#373534"/>
+                        </g>
+                        </g>
+                        </g>
+                        <g id="shelf" filter="url(#filter9_d_177_10)">
+                        <rect x="339" y="137" width="175" height="12" rx="5" fill="#373534"/>
+                        </g>
+                        <g id="items_on_shelf">
+                        <g id="small_plant">
+                        <g id="pot" filter="url(#filter10_i_177_10)">
+                        <path d="M449.767 71.3589H498.25C498.25 71.3589 508.249 136.751 498.25 136.751C488.25 136.751 458.858 136.751 449.767 136.751C440.677 136.751 449.767 71.3589 449.767 71.3589Z" fill="#FFCD20"/>
+                        </g>
+                        <path id="planr" d="M457.645 63.9092L465.221 70.945H467.342H478.857L481.281 68.4618H487.341L495.826 63.9092L498.25 58.5288L501.583 51.079V47.3541V39.9043H500.068L497.038 47.3541L494.613 56.8733L483.705 62.2536L482.493 63.9092L481.281 58.5288L487.341 53.5623L489.159 51.079L491.28 42.3876V35.3517L493.098 26.6603L494.613 21.2799H498.25L504.007 19.2105C502.593 17.9689 499.462 15.4857 498.25 15.4857H493.098C491.583 15.4857 490.977 17.555 489.159 21.2799C487.341 25.0048 487.341 23.7632 487.341 26.6603V37.835V42.3876C486.331 45.2847 484.19 51.079 483.705 51.079C483.22 51.079 481.887 52.7345 481.281 53.5623L478.857 51.079L475.523 44.8709V37.835V29.1436L472.19 21.2799L469.16 15.4857L467.342 11.7608L465.221 7.20814L467.342 5.55264V1L462.494 2.6555V11.7608L467.342 23.7632L469.16 32.0407L465.221 35.3517V44.8709L469.16 47.3541L472.19 56.8733L467.342 63.9092L465.221 56.8733L460.373 47.3541L455.524 39.9043V35.3517L453.1 29.1436L450.373 34.524L453.1 42.3876L454.615 51.079L450.373 47.3541L446.737 42.3876L444.313 37.835V44.8709L449.161 53.5623L457.645 63.9092Z" fill="#6D8544" stroke="#6D8544"/>
+                        </g>
+                        <g id="radio">
+                        <path id="radio_body" d="M363.615 92.4676H411.29C414.092 100.433 418.52 113.017 418.52 113.017C418.52 113.017 423.611 127.486 426.907 136.855H349.641C349.641 136.855 342.654 125.758 349.641 113.017C356.628 100.276 363.615 92.4676 363.615 92.4676Z" fill="#8E3535"/>
+                        <g id="anthenna">
+                        <line id="anthenna stick" x1="407.688" y1="92.409" x2="412.62" y2="50.4881" stroke="black"/>
+                        <circle id="anthenna_2" cx="412.705" cy="49.3135" r="2.05495" fill="#8E3535"/>
+                        </g>
+                        <path id="speaker" d="M379.004 113.839C379.004 124.053 377.771 132.745 367.497 134.389C356.945 136.077 351.057 132.273 351.057 122.059C351.057 111.845 363.411 95.7555 367.497 95.7555C374.072 92.4676 379.004 103.625 379.004 113.839Z" fill="#373534"/>
+                        <g id="buttons">
+                        <circle id="yellow button" cx="389.279" cy="102.331" r="5.75386" fill="#FFCD20"/>
+                        <circle id="green button" cx="402.431" cy="110.551" r="5.75386" fill="#406334"/>
+                        <circle id="bllue button" cx="411.472" cy="125.347" r="7.39782" fill="#6D84C1"/>
+                        <g id="turn-on-off-button">
+                        <circle id="black button" cx="390.923" cy="123.703" r="7.39782" fill="#1E1E1E"/>
+                        <g id="mode_off_on">
+                        <mask id="mask0_177_10" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="385" y="118" width="11" height="11">
+                        <rect id="Bounding box" x="385.991" y="118.771" width="9.86376" height="9.86376" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_177_10)">
+                        <path id="mode_off_on_2" d="M390.923 123.704C390.806 123.704 390.709 123.664 390.63 123.585C390.551 123.507 390.512 123.409 390.512 123.293V120.005C390.512 119.888 390.551 119.791 390.63 119.712C390.709 119.633 390.806 119.594 390.923 119.594C391.039 119.594 391.137 119.633 391.215 119.712C391.294 119.791 391.334 119.888 391.334 120.005V123.293C391.334 123.409 391.294 123.507 391.215 123.585C391.137 123.664 391.039 123.704 390.923 123.704ZM390.923 127.402C390.409 127.402 389.928 127.305 389.479 127.11C389.03 126.914 388.64 126.651 388.308 126.318C387.976 125.986 387.712 125.596 387.517 125.147C387.321 124.698 387.224 124.217 387.224 123.704C387.224 123.286 387.292 122.88 387.429 122.486C387.566 122.092 387.765 121.731 388.025 121.402C388.101 121.306 388.196 121.26 388.313 121.263C388.429 121.267 388.532 121.313 388.621 121.402C388.696 121.477 388.731 121.57 388.724 121.679C388.717 121.789 388.679 121.892 388.611 121.988C388.426 122.234 388.285 122.505 388.19 122.799C388.094 123.094 388.046 123.395 388.046 123.704C388.046 124.505 388.325 125.185 388.883 125.743C389.441 126.301 390.121 126.58 390.923 126.58C391.724 126.58 392.404 126.301 392.962 125.743C393.52 125.185 393.8 124.505 393.8 123.704C393.8 123.388 393.753 123.082 393.661 122.784C393.568 122.486 393.423 122.214 393.224 121.967C393.156 121.878 393.118 121.78 393.111 121.674C393.104 121.568 393.139 121.477 393.214 121.402C393.296 121.32 393.395 121.277 393.512 121.274C393.628 121.27 393.724 121.313 393.8 121.402C394.067 121.731 394.271 122.09 394.411 122.481C394.551 122.871 394.622 123.279 394.622 123.704C394.622 124.217 394.524 124.698 394.329 125.147C394.134 125.596 393.87 125.986 393.538 126.318C393.205 126.651 392.815 126.914 392.366 127.11C391.918 127.305 391.436 127.402 390.923 127.402Z" fill="white"/>
+                        </g>
+                        </g>
+                        </g>
+                        </g>
+                        </g>
+                        <g id="radio_2">
+                        <path id="radio_body_2" d="M364.079 93.2089H411.754C414.556 101.174 418.984 113.758 418.984 113.758C418.984 113.758 423.704 127.631 427 137H350.105C350.105 137 343.119 126.499 350.105 113.758C357.092 101.018 364.079 93.2089 364.079 93.2089Z" fill="#8E3535"/>
+                        <g id="anthenna_3">
+                        <line id="anthenna stick_2" x1="408.152" y1="93.1504" x2="413.084" y2="51.2294" stroke="black"/>
+                        <circle id="anthenna_4" cx="413.169" cy="50.0548" r="2.05495" fill="#8E3535"/>
+                        </g>
+                        <path id="speaker_2" d="M379.468 114.58C379.468 124.795 378.235 133.486 367.961 135.13C357.409 136.818 351.521 133.015 351.521 122.8C351.521 112.586 363.875 96.4969 367.961 96.4969C374.537 93.2089 379.468 104.366 379.468 114.58Z" fill="#373534"/>
+                        <g id="buttons_2">
+                        <circle id="yellow button_2" cx="389.743" cy="103.073" r="5.75386" fill="#FFCD20"/>
+                        <circle id="green button_2" cx="402.895" cy="111.293" r="5.75386" fill="#406334"/>
+                        <circle id="bllue button_2" cx="411.937" cy="126.088" r="7.39782" fill="#6D84C1"/>
+                        <g id="turn-on-off-button_2">
+                        <circle id="black button_2" cx="391.387" cy="124.444" r="7.39782" fill="#1E1E1E"/>
+                        <g id="mode_off_on_3">
+                        <mask id="mask1_177_10" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="386" y="119" width="11" height="11">
+                        <rect id="Bounding box_2" x="386.455" y="119.513" width="9.86376" height="9.86376" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask1_177_10)">
+                        <path id="mode_off_on_4" d="M391.387 124.445C391.27 124.445 391.173 124.405 391.094 124.327C391.015 124.248 390.976 124.15 390.976 124.034V120.746C390.976 120.629 391.015 120.532 391.094 120.453C391.173 120.374 391.27 120.335 391.387 120.335C391.503 120.335 391.601 120.374 391.68 120.453C391.758 120.532 391.798 120.629 391.798 120.746V124.034C391.798 124.15 391.758 124.248 391.68 124.327C391.601 124.405 391.503 124.445 391.387 124.445ZM391.387 128.144C390.873 128.144 390.392 128.046 389.943 127.851C389.495 127.656 389.104 127.392 388.772 127.06C388.44 126.728 388.176 126.337 387.981 125.888C387.785 125.44 387.688 124.959 387.688 124.445C387.688 124.027 387.756 123.621 387.893 123.227C388.03 122.833 388.229 122.472 388.489 122.143C388.565 122.047 388.661 122.001 388.777 122.005C388.893 122.008 388.996 122.054 389.085 122.143C389.161 122.219 389.195 122.311 389.188 122.421C389.181 122.53 389.143 122.633 389.075 122.729C388.89 122.976 388.75 123.246 388.654 123.541C388.558 123.835 388.51 124.137 388.51 124.445C388.51 125.246 388.789 125.926 389.347 126.484C389.905 127.043 390.585 127.322 391.387 127.322C392.188 127.322 392.868 127.043 393.426 126.484C393.985 125.926 394.264 125.246 394.264 124.445C394.264 124.13 394.217 123.823 394.125 123.525C394.033 123.227 393.887 122.955 393.688 122.708C393.62 122.619 393.582 122.522 393.575 122.416C393.568 122.309 393.603 122.219 393.678 122.143C393.76 122.061 393.86 122.018 393.976 122.015C394.092 122.011 394.188 122.054 394.264 122.143C394.531 122.472 394.735 122.832 394.875 123.222C395.015 123.613 395.086 124.02 395.086 124.445C395.086 124.959 394.988 125.44 394.793 125.888C394.598 126.337 394.334 126.728 394.002 127.06C393.669 127.392 393.279 127.656 392.83 127.851C392.382 128.046 391.901 128.144 391.387 128.144Z" fill="white"/>
+                        </g>
+                        </g>
+                        </g>
+                        </g>
+                        </g>
+                        </g>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_177_10" x="0" y="388" width="518" height="19" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_177_10"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_177_10" result="shape"/>
+                        </filter>
+                        <filter id="filter1_d_177_10" x="206.419" y="185.504" width="282.359" height="216.945" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_177_10"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_177_10" result="shape"/>
+                        </filter>
+                        <filter id="filter2_i_177_10" x="158.259" y="314.519" width="20.8811" height="73.9307" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="-4" dy="-5"/>
+                        <feGaussianBlur stdDeviation="7.5"/>
+                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_177_10"/>
+                        </filter>
+                        <filter id="filter3_i_177_10" x="142.082" y="308.892" width="20.1777" height="79.5577" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="-4" dy="-5"/>
+                        <feGaussianBlur stdDeviation="7.5"/>
+                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_177_10"/>
+                        </filter>
+                        <filter id="filter4_i_177_10" x="116.057" y="308.892" width="30.0249" height="79.5577" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="-4" dy="-5"/>
+                        <feGaussianBlur stdDeviation="7.5"/>
+                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_177_10"/>
+                        </filter>
+                        <filter id="filter5_i_177_10" x="103.396" y="314.519" width="16.6606" height="73.9307" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="-4" dy="-5"/>
+                        <feGaussianBlur stdDeviation="7.5"/>
+                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_177_10"/>
+                        </filter>
+                        <filter id="filter6_i_177_10" x="83.7017" y="308.892" width="23.6946" height="79.5577" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="-4" dy="-5"/>
+                        <feGaussianBlur stdDeviation="7.5"/>
+                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_177_10"/>
+                        </filter>
+                        <filter id="filter7_i_177_10" x="7.03369" y="368.678" width="80.668" height="19.7709" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="-4" dy="-5"/>
+                        <feGaussianBlur stdDeviation="7.5"/>
+                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_177_10"/>
+                        </filter>
+                        <filter id="filter8_i_177_10" x="18.2876" y="359.535" width="69.4138" height="14.1439" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="-4" dy="-5"/>
+                        <feGaussianBlur stdDeviation="7.5"/>
+                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_177_10"/>
+                        </filter>
+                        <filter id="filter9_d_177_10" x="335" y="137" width="183" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_177_10"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_177_10" result="shape"/>
+                        </filter>
+                        <filter id="filter10_i_177_10" x="440.727" y="61.3589" width="61.967" height="75.3924" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="-5" dy="-10"/>
+                        <feGaussianBlur stdDeviation="5"/>
+                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_177_10"/>
+                        </filter>
+                        </defs>
+                        </svg>                         
+                </div>
+        </div>
+        <div class="bottom_nav_bar">
+                <div class="buttons items-start">
+                    <div class="button" onClick="document.getElementById('about').scrollIntoView({ behavior:'smooth' });">
+                        <svg class="illustration" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                            <mask id="mask0_144_183" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="37" height="37">
+                              <rect width="37" height="37" transform="matrix(-1 0 0 1 37 0)" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_144_183)">
+                              <path d="M15.4999 18.95L25.3999 9.05002L23.2499 6.90002L11.1999 18.95L23.2499 31L25.3999 28.85L15.4999 18.95Z" fill="#373534"/>
+                            </g>
+                          </svg>
+                          <p>About</p>
+                    </div>
+                </div>
+                <div class="buttons items-end">
+                    <div class="button" onClick="document.getElementById('projects').scrollIntoView({ behavior:'smooth' });">
+                        <p>Projects</p>
+                        <svg class="illustration" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                            <mask id="mask0_144_188" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="37" height="37">
+                            <rect width="37" height="37" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_144_188)">
+                            <path d="M21.5 18.95L11.6 9.05002L13.75 6.90002L25.8 18.95L13.75 31L11.6 28.85L21.5 18.95Z" fill="#373534"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- PROJECT PAGE -->
+    <div class="section" id="projects">
+        <div class="relative m-auto h-screen max-w=[2000px] flex flex-col items-center justify-center">           
+                <h2>Projects</h2>
+                <div class="z-10 max-w-[80vw] flex flex-row !overflow-x-auto">
+                    <a class="project_container" href="project1.html" >
+                        <div class="project_frame">
+                            <div class="project_display"></div>
+                        </div>
+                        <div class="project_description">
+                            <h3>Project 1</h3>
+                            <p>Project desctiption...</p>
+                        </div>
+                    </a>
+                    <a class="project_container" href="project1.html" >
+                        <div class="project_frame">
+                            <div class="project_display"></div>
+                        </div>
+                        <div class="project_description">
+                            <h3>Project 1</h3>
+                            <p>Project desctiption...</p>
+                        </div>
+                    </a>
+                    <a class="project_container" href="project1.html" >
+                        <div class="project_frame">
+                            <div class="project_display"></div>
+                        </div>
+                        <div class="project_description">
+                            <h3>Project 1</h3>
+                            <p>Project desctiption...</p>
+                        </div>
+                    </a>
+                </div>   
+        </div>
+
+        <div class="bottom_nav_bar">
+            <div class="buttons items-start">
+                <div class="button" onClick="document.getElementById('home').scrollIntoView({ behavior:'smooth' });">
+                        <svg class="illustration" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                            <mask id="mask0_144_183" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="37" height="37">
+                            <rect width="37" height="37" transform="matrix(-1 0 0 1 37 0)" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_144_183)">
+                            <path d="M15.4999 18.95L25.3999 9.05002L23.2499 6.90002L11.1999 18.95L23.2499 31L25.3999 28.85L15.4999 18.95Z" fill="#373534"/>
+                            </g>
+                        </svg>
+                    <p>Home</p>
+                </div>
+                <div class="button" onClick="document.getElementById('about').scrollIntoView({ behavior:'smooth' });">
+                    <svg class="illustration" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                        <mask id="mask0_144_213" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="37" height="37">
+                        <rect width="37" height="37" transform="matrix(-1 0 0 1 37 0)" fill="#D9D9D9"/>
+                        </mask>
+                        <g mask="url(#mask0_144_213)">
+                        <path d="M22.45 18.95L32.35 9.05001L30.25 6.95001L18.25 18.95L30.25 30.95L32.35 28.85L22.45 18.95ZM9.79997 18.95L19.7 9.05001L17.6 6.95001L5.59998 18.95L17.6 30.95L19.7 28.85L9.79997 18.95Z" fill="#373534"/>
+                        </g>
+                        </svg>
+                    <p>About</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>  
+  </div> 
+</div>
+
+
+  <script src="script.js"></script>
+ 
+        
+
+  
+</body>
+</html>
