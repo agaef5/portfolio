@@ -44,14 +44,14 @@
             <svg class="illustration drop-shadow-xl" width="4" height="64" viewBox="0 0 4 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="Line 17" d="M2.40002 2L2.40002 62" stroke="#373534" stroke-width="3" stroke-linecap="round"/>
                 </svg>  
-            <svg class="illustration drop-shadow-xl" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- <svg class="illustration drop-shadow-xl" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="mask0_142_636" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="48">
                 <rect x="0.199951" width="48" height="48" fill="#373534"/>
                 </mask>
                 <g mask="url(#mask0_142_636)">
                 <path d="M19.795 42.0848C17.662 42.0848 15.8714 41.3585 14.4233 39.906C12.9752 38.4535 12.2511 36.662 12.2511 34.5315C12.2511 32.401 12.9752 30.6096 14.4233 29.1571C15.8714 27.7045 17.6651 26.9783 19.8043 26.9783C20.6796 26.9783 21.4789 27.1016 22.2021 27.3484C22.9253 27.5951 23.55 27.9442 24.0761 28.3957V5.90326H36.1859V12.8718H27.3576V34.5315C27.3576 36.662 26.6304 38.4535 25.1761 39.906C23.7218 41.3585 21.9281 42.0848 19.795 42.0848Z" fill="#373534"/>
                 </g>
-                </svg>                
+                </svg> -->
             <svg onclick="SwitchTheme()" class="illustration drop-shadow-xl"  width="49" height="50" viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="mask0_142_633" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="49" height="50">
                 <rect y="0.5" width="49" height="49" fill="#373534"/>
@@ -68,70 +68,51 @@
 
         <div class="relative h-screen max-w-[2000px] flex items-center g-0">
 
-            <div class="flex flex-col justify-start items-center md:mt-0 md:flex-row ">
-                <div class="p-0 bg-color-black  h-[20rem] w-[100vw] md:m-0 md:w-[40vw] md:h-[100vh]"></div>
-                <div class="z-[10] w-full p-4 bg-color-beige flex flex-col md: md:max-w-[50vw] md:p-8 md:gap-4 md:rounded-r-xl md:justify-center">
-                    <h2 class="mt-[-2.5rem] md:mt-4">So, who am I actually?</h2>
-                    <p>I am Aga, originally from Poland, <a class="bold" href="https://www.duolingo.com/profile/agaef5">language lover</a>
-                    <a class="bold" href="https://www.goodreads.com/user/show/160780355-agnieszka-furgalska">book</a>worm, 
-                    and games lover (board and <a class="bold" href="https://steamcommunity.com/profiles/76561198879110091/">video</a> ones!)
-                    Post Malone biggest fan, in free time I am trying 
-                    to make some animations - so long story short:</p> 
-                    <button id="playButton">I love to learn new stuff</button>
-                    <p class="mt-4 text-lg font-extrabold">Want to get in touch? <span>Contact me!</span></p>
-
-                    <!-- Spotify  -->
-                    <script src="https://sdk.scdn.co/spotify-player.js"></script>
-                    <script>
-                          window.onSpotifyWebPlaybackSDKReady = () => {
-                              const token = 'BQAlOebG0BwUTHjog9gGLuykNRuk3QRWKqmhQmCSGMfO-BZ8-807x6komW6itdc5ERN7y9obpV-IOF8acT_8tpJUMAaZidNrZ6dcpvrwSKTfyYqgylnlwI6hoOq6r_--e04R8rfY9z-lxISzl7_m8sQGcwHotgXhgzqtG_RJBdocfPR9FAsIu7guGF4PnabXgQTt8Vzk7Y0KikKnf6EnI3Cycp8P'; // Replace with a valid access token
-                              const player = new Spotify.Player({
-                              name: 'Agas Room',
-                              getOAuthToken: callback => {
-                              callback(token);
-                              }
-                              });
-                  
-                                // Ready
-                              player.addListener('ready', ({ device_id }) => {
-                                  console.log('Ready with Device ID', device_id);
-                              });
-                  
-                              // Not Ready
-                              player.addListener('not_ready', ({ device_id }) => {
-                                  console.log('Device ID has gone offline', device_id);
-                              });
-                  
-                              player.addListener('initialization_error', ({ message }) => {
-                                  console.error(message);
-                              });
-                  
-                              player.addListener('authentication_error', ({ message }) => {
-                                  console.error(message);
-                              });
-                  
-                              player.addListener('account_error', ({ message }) => {
-                                  console.error(message);
-                              });
-                  
-                              player.connect();
-                              };
-
-
-                              const playButton = document.getElementById('playButton'); // Replace with your button's ID
-                                playButton.addEventListener('click', () => {
-                                    // Start playing your first playlist
-                                    player
-                                    .play({
-                                        uris: ['spotify:playlist:5GgQWohM5353YW3dxTrMz9'], // Replace with your playlist URI
-                                    })
-                                    .then(() => {
-                                        console.log('Playing playlist 1');
-                                    });
-                                });
-
-                    </script>
+            <div class="relative h-screen w-screen flex flex-col md:justify-start items-center md:mt-0 md:flex-row md:h-fit ">
+                <div class="top-0 p-0 bg-color-black h-fit w-[100vw] md:relative md:m-0 md:w-[40vw] md:h-[100vh]">
+                <!-- <div class="absolute top-0 p-0 bg-color-black  h-[100vh] w-[100vw] md:relative md:m-0 md:w-[40vw] md:h-[100vh]"> -->
+                    <img src="images/portrait.png">
                 </div>
+                <div class="flex flex-col">
+                    <div class="about_me_toggle z-[10] h-[80%] w-screen -mt-4 px-6 py-6 bg-color-beige max-md:rounded-xl flex flex-col md:static md:w-fit md:h-fit md:mt-12 md:max-w-[50vw] md:p-8 md:gap-4 md:rounded-r-xl md:justify-center">
+                    <!-- <div class="z-[10] w-full p-4 bg-color-beige flex flex-col md:mt-12 md:max-w-[50vw] md:p-8 md:gap-4 md:rounded-r-xl md:justify-center"> -->
+                        <div class="h-fit flex flex-row items-center justify-between">
+                            <h3 class="md:mt-4">So, who am I actually?</h3>
+                            <div onclick="openAndClose()" class="md:hidden flex flex-row gap-0">
+                                <div class="rotate_arrow turn_around arrow"></div>
+                            </div>
+                             
+                        </div>
+                        <!-- <h3 class="mt-[-2.5rem] md:mt-4">So, who am I actually?</h3> -->
+                        <p class="hidden hidden-paragraph after:block md:block">I'm Aga, your friendly neighborhood Front-End Developer intern!</p>
+                        <p class="hidden hidden-paragraph after:block md:block">When not coding, I'm lost in <a class="bold" href="https://www.goodreads.com/user/show/160780355-agnieszka-furgalska">good books</a>,
+                             or exploring languages (both <a class="bold" href="https://www.duolingo.com/profile/agaef5">human</a>
+                             and  <a class="font-extrabold" href="https://github.com/agaef5">programming</a>). 
+                             Globetrotter at heart, always hunting the purr-fect Instagram shot. <a class="font-extrabold" href="https://boardgamearena.com/player?id=93912482">Board games</a>, 
+                             video games, web design, and sketching fuel my creativity. 
+                        <p class="hidden hidden-paragraph md:block">Oh, and did I mention I'm the ultimate <a class="font-extrabold" href="https://open.spotify.com/album/1F9LY06gadScF4g3g3BrDC?si=Z930KTIlRSqK7mrKIq9dtg">Post Malone</a> enthusiast? 🎵</p>
+                        <p class="hidden hidden-paragraph md:block">Currently mastering animations and eager to learn all this world offers.</p>   
+                        <p class="hidden hidden-paragraph md:block font-extrabold">Let's connect and chat about code, cats, or anything in between!</p>
+                    </div>
+                    <div class=" z-[10] ml-6 pt-4 md:block md:pl-2 md:pt-8" >
+                    <!-- <div class="z-[10] ml-6 md:pl-8 md:pt-8" > -->
+                        <h4 class=" font-extrabold">What am I working with?</h4>
+                            <div class="list flex flex-row items-center my-4 max-w-[600px] !overflow-auto">
+                                <svg class="drop-shadow-xl" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                                    <path fill="#E65100" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path><path fill="#FF6D00" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path><path fill="#FFF" d="M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z"></path><path fill="#EEE" d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z"></path>
+                                    </svg>
+                                <svg class="drop-shadow-xl" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                                    <path fill="#0277BD" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path><path fill="#039BE5" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path><path fill="#FFF" d="M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"></path><path fill="#EEE" d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z"></path>
+                                    </svg>
+                                <svg class="drop-shadow-xl" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                                    <path fill="#ffd600" d="M6,42V6h36v36H6z"></path><path fill="#000001" d="M29.538 32.947c.692 1.124 1.444 2.201 3.037 2.201 1.338 0 2.04-.665 2.04-1.585 0-1.101-.726-1.492-2.198-2.133l-.807-.344c-2.329-.988-3.878-2.226-3.878-4.841 0-2.41 1.845-4.244 4.728-4.244 2.053 0 3.528.711 4.592 2.573l-2.514 1.607c-.553-.988-1.151-1.377-2.078-1.377-.946 0-1.545.597-1.545 1.377 0 .964.6 1.354 1.985 1.951l.807.344C36.452 29.645 38 30.839 38 33.523 38 36.415 35.716 38 32.65 38c-2.999 0-4.702-1.505-5.65-3.368L29.538 32.947zM17.952 33.029c.506.906 1.275 1.603 2.381 1.603 1.058 0 1.667-.418 1.667-2.043V22h3.333v11.101c0 3.367-1.953 4.899-4.805 4.899-2.577 0-4.437-1.746-5.195-3.368L17.952 33.029z"></path>
+                                    </svg>
+
+                                    
+                            </div>
+                    </div>
+                </div>
+                
             </div>
             
     
@@ -142,7 +123,7 @@
 
             <div class="buttons items-end">
                 <div class="button" onClick="document.getElementById('home').scrollIntoView({ behavior:'smooth' });" >
-                    <p>Home</p>
+                    <h4>Home</h4>
                     <svg class="illustration" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
                         <mask id="mask0_144_188" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="37" height="37">
                         <rect width="37" height="37" fill="#D9D9D9"/>
@@ -153,7 +134,7 @@
                     </svg>
                 </div>
                 <div class="button" onClick="document.getElementById('projects').scrollIntoView({ behavior:'smooth' });">
-                    <p>Projects</p>
+                    <h4>Projects</h4>
                     <svg class="illustration" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
                         <mask id="mask0_144_182" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="37" height="37">
                         <rect width="37" height="37" fill="#D9D9D9"/>
@@ -170,16 +151,16 @@
     <!-- HOME -->
     <div class="section" id="home">
         
-        <div class="flex justify-center items-center relative h-screen max-w-[2000px]">
+        <div class="flex flex-col lg:flex-row justify-center items-center relative h-screen max-w-[2000px]">
                 <div class="flex flex-col items-center md:items-start">
                     <h1>Hi, I'm Aga!</h1>
                     <div class="bg-color-black w-[80%] h-1 mb-6 "> </div>
-                    <h3>Front-End Developer Intern</h3>
-                    <h3>aspiring animator & cat mom</h3>
-                    <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
+                    <h4>Front-End Developer Intern</h4>
+                    <h4>aspiring animator & cat mom</h4>
+                   
                 </div>
                 
-                <div class="desk_illustration hidden md:block">
+                <div class="desk_illustration hidden sm:block">
                     <svg width="518" height="407" viewBox="0 0 518 407" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="big_illustration">
                         <g id="table" filter="url(#filter0_d_177_10)">
@@ -404,12 +385,12 @@
                               <path d="M15.4999 18.95L25.3999 9.05002L23.2499 6.90002L11.1999 18.95L23.2499 31L25.3999 28.85L15.4999 18.95Z" fill="#373534"/>
                             </g>
                           </svg>
-                          <p>About</p>
+                          <h4>About</h4>
                     </div>
                 </div>
                 <div class="buttons items-end">
                     <div class="button" onClick="document.getElementById('projects').scrollIntoView({ behavior:'smooth' });">
-                        <p>Projects</p>
+                        <h4>Projects</h4>
                         <svg class="illustration" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
                             <mask id="mask0_144_188" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="37" height="37">
                             <rect width="37" height="37" fill="#D9D9D9"/>
@@ -469,7 +450,7 @@
                             <path d="M15.4999 18.95L25.3999 9.05002L23.2499 6.90002L11.1999 18.95L23.2499 31L25.3999 28.85L15.4999 18.95Z" fill="#373534"/>
                             </g>
                         </svg>
-                    <p>Home</p>
+                    <h4>Home</h4>
                 </div>
                 <div class="button" onClick="document.getElementById('about').scrollIntoView({ behavior:'smooth' });">
                     <svg class="illustration" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
@@ -480,7 +461,7 @@
                         <path d="M22.45 18.95L32.35 9.05001L30.25 6.95001L18.25 18.95L30.25 30.95L32.35 28.85L22.45 18.95ZM9.79997 18.95L19.7 9.05001L17.6 6.95001L5.59998 18.95L17.6 30.95L19.7 28.85L9.79997 18.95Z" fill="#373534"/>
                         </g>
                         </svg>
-                    <p>About</p>
+                    <h4>About</h4>
                 </div>
             </div>
         </div>

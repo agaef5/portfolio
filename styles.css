@@ -10,6 +10,7 @@ body, html {
     height: 100%;
     scroll-snap-type: x mandatory !important;
     -webkit-overflow-scrolling: touch; /*Enable smooth scrolling on iOS; */
+    height: --webkit-fill-available;
 }
 
 .vertical_scroll{
@@ -34,7 +35,7 @@ body, html {
 /* reused font styles - start */
 h1 {
     font-weight: 800;
-    font-size: 6rem;
+    font-size: 5rem;
     margin: 1rem;
     margin-left: 0;
 }
@@ -52,8 +53,15 @@ h3 {
     margin: 0;
 }
 
-p{
+h4{
     font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 a {
@@ -69,29 +77,30 @@ a {
         margin: 0.5rem;
         margin-left: 0;
     }
+
+    p{
+        font-size: 1rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
     
-    h2 {
+    /* h2 {
         font-weight: 800;
         font-size: 2.5rem;
-        /* margin-top: .5rem; */
         margin-bottom: .5rem;
     }
     
     h3 {
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 800;
         margin: 0;
-    }
+    } 
     
-    p{
-        font-size: 1rem;
-    }
-    
-    a {
+   a {
         text-decoration: none;
         color: var(--color-black);
         font-weight: 800;
-    }
+    } */
 }
 /* reused font styles - end */
 
@@ -284,8 +293,39 @@ a {
     
 }
 /* P R O J E C T S    P A G E - end*/
+.about_me_toggle{
+    transition: 0.3s ease-in-out;
+    animation: ease-in-out 2s;
+}
 
+.about_me_toggle.active {
+    transform: translateY(-55%);
+    border-radius: 1rem;
+}
 
+.rotate_arrow{
+    transition: 0.3s ease-in-out;
+    animation: ease-in-out 2s;
+}
+
+.turn-around{
+    transform: rotate(180deg);
+}
+
+.show {
+    display: block;
+}
+
+.arrow{
+    display: block;
+  margin: 30px auto;
+  width: 2rem;
+  height: 2rem;
+  border-top: 5px solid var(--color-black);
+  border-left: 5px solid var(--color-black);
+  transform: rotate(45deg);
+  margin-right: 2rem;
+}
 
 
 

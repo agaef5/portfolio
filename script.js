@@ -57,5 +57,18 @@ function ChangeSVGColor() {
 }
 
 
+var open_section = document.querySelector('.about_me_toggle');
+var show_paragraph = document.querySelectorAll('.hidden-paragraph');
+var arrow = document.querySelector('.rotate_arrow');
+
+function openAndClose() {
+    open_section.classList.toggle('active');
+    arrow.classList.toggle('turn_around')
+
+    for (var l = 0; l < show_paragraph.length; l++) {
+        show_paragraph[l].classList.toggle('show');
+    }
+}
+
 
 
