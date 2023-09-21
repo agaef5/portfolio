@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function(){
     const loading_screen = document.querySelector(".loading_screen");
@@ -10,31 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     homeSection.scrollIntoView({});
 });
 
-
-
-
-
 var color;
-
-function SwitchTheme() {
-    var theme = document.body;
-   
-    if(theme.classList.contains("light")){
-        theme.classList.add("dark");
-        theme.classList.remove("light");
-        color = "#f1e9d2b4"
-        ChangeSVGColor();
-    } else if(theme.classList.contains("dark")){
-        theme.classList.add("light");
-        theme.classList.remove("dark");
-        color = "#373534"
-        ChangeSVGColor();
-    };
-
-}
+var color_transparent;
+var bg = document.getElementsByClassName("project_description");
 
 function ChangeSVGColor() {
     var illustrations = document.getElementsByClassName("illustration");
+    var rects = document.getElementsByClassName("rect_class");
 
     for (var i = 0; i < illustrations.length; i++) {
         var svg = illustrations[i];
@@ -52,9 +36,60 @@ function ChangeSVGColor() {
         for (var k = 0; k < groups.length; k++) {
             groups[k].setAttribute("fill", color);
         }
+
+        for (var l = 0; l < rects.length; l++) {
+            rects[l].setAttribute("fill", color);
+        }
         
     }
-}
+};
+
+function ChangeBgColor() {
+    for (var i=0; i < bg.length; i++) {
+        bg[i].style.backgroundColor = color_transparent;
+    };
+ };
+
+document.addEventListener("DOMContentLoaded", function detectSystemTheme() {
+    var prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var theme = document.body;
+
+    if (prefersDarkMode) {
+        theme.classList.add("dark");
+        theme.classList.remove("light");
+        color = "#f1e9d2b4"; 
+        color_transparent = "#858074cb";
+    } else {
+        theme.classList.add("light");
+        theme.classList.remove("dark");
+        color = "#373534";
+        color_transparent = "#373534c4";
+    }
+    console.log(color, color_transparent)
+    ChangeSVGColor()
+    ChangeBgColor()
+    
+});
+
+function SwitchTheme() {
+    var theme = document.body;
+   
+    if(theme.classList.contains("light")){
+        theme.classList.add("dark");
+        theme.classList.remove("light");
+        color = "#f1e9d2b4"
+        color_transparent = "#858074cb"
+
+    } else if(theme.classList.contains("dark")){
+        theme.classList.add("light");
+        theme.classList.remove("dark");
+        color = "#373534";
+        color_transparent = "#373534c4";
+    };
+        ChangeSVGColor();
+        ChangeBgColor();
+};
+
 
 
 var open_section = document.querySelector('.about_me_toggle');
@@ -70,5 +105,15 @@ function openAndClose() {
     }
 }
 
+//centering divs for 
+const centeredDivs = document.querySelectorAll('.skill_description');
+centeredDivs.forEach((div) => {
+
+    const divWidth = div.offsetWidth;
+    const divHeight = div.offsetHeight;
+    
+    div.style.top = `calc(50% - ${divHeight / 2}px)`;
+    div.style.left = `calc(50% - ${divWidth / 2}px)`;
+});
 
 
