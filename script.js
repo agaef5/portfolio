@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function(){
     const loading_screen = document.querySelector(".loading_screen");
@@ -105,7 +103,7 @@ function openAndClose() {
     }
 }
 
-//centering divs for 
+//centering divs for
 const centeredDivs = document.querySelectorAll('.skill_description');
 centeredDivs.forEach((div) => {
 
