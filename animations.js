@@ -39,4 +39,47 @@ const blink = gsap.timeline({
     0.15
   );
 
+  let books = document.querySelector("#books");
+  const move_books = gsap.timeline({paused: true});
+  move_books
+    .to("#left_side_books", {
+      x:10,
+      duration: 0.3
+    }, 0)
+    .to("#right_side_books", {
+      x: -10,
+      duration: 0.3
+    }, 0)
+    .to("#animated_book", {
+      y: -15,
+      x: 5,
+      rotation: 5,
+      duration: 0.3
+    }, 0);
+  
+  books.addEventListener("mouseover", () => {
+    move_books.play();
+  });
+  books.addEventListener("mouseout", () => {
+    move_books.reverse();
+  });
+
+  const setTheBooks = gsap.timeline();
+  setTheBooks
+    .from("#left_side_books", {
+      x:10,
+      duration: 0.3
+    }, 1)
+    .from("#right_side_books", {
+      x: -10,
+      duration: 0.3
+    }, 1)
+    .from("#animated_book", {
+      y: -15,
+      x: 5,
+      rotation: 5,
+      duration: 0.3
+    }, 1);
+
+
   blink.play();

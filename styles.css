@@ -40,13 +40,6 @@ body, html {
     --color-beige: #373534;
   }
 
-  /* @media (prefers-color-scheme: dark) {
-    .light {
-        --color-black: #f1e9d2b4;
-        --color-olive: #2B2929;
-        --color-beige: #373534;
-      }
-} */
 /* theme colors - end */
 
 .cat{
@@ -282,6 +275,10 @@ a {
     .project_container:hover{
         transform: none;
     }
+
+    .project_container:hover{
+        transform: none;
+    }
 }
 
 .button {
@@ -303,6 +300,14 @@ a {
     overflow-x: auto!important;
   }
 
+.project_gallery .container {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.project_gallery::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
 
 .project_container {
     position: relative;
@@ -312,6 +317,12 @@ a {
 
 .project_container:hover{
     transform: scale(1.1);
+}
+
+@media only screen and (max-width: 640px) {
+    .project_container:hover{
+        transform: none;
+    }
 }
 
 .project_description {
@@ -407,6 +418,15 @@ border-left: 3px solid var(--color-black);
 transform: rotate(45deg);
 }
 
+.project_images {
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
 
 .project_images > img {
     margin-top: 4rem;
@@ -430,8 +450,6 @@ transform: rotate(45deg);
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    /* top: 0;
-    left: 0; */
     padding: 20%;
     font-weight: 700;
     background: radial-gradient(var(--color-beige) 40%, transparent 70% );
@@ -439,5 +457,30 @@ transform: rotate(45deg);
     animation: visibility 0s, opacity 0.4s ease-in-out;
 }
 
+.hero_banner{
+    background-size: cover;
+    height: 50vh;
+
+}
+.workspaces{
+    background-image: url(images/projects/HiddenWorkspacesInAarhus/background.jpg);
+}
+
+.hero_text{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    color: var(--color-beige);
+    backdrop-filter: blur(5px);
+    background-color: #373534c4;
+    
+}
 
 
