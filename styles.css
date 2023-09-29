@@ -483,4 +483,36 @@ transform: rotate(45deg);
     
 }
 
+.embed_container{
+    position: absolute;
+    top: 20vh;
+    right: 30vw;
+}
 
+.audio_player{
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: .5s;
+    /* opacity: 0; */
+}
+
+.embed_inactive{
+    display: none;
+}
+
+.embed_active{
+    display: block;
+}
+
+.radio_button {
+    cursor: pointer;
+}
+
+#books{
+    cursor: pointer;
+}
+
+#computer{
+    cursor: pointer;
+}

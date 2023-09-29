@@ -1,8 +1,6 @@
 const blink = gsap.timeline({
     repeat: -1,
-    repeatDelay: 3.5,
-    paused: true
-    
+    repeatDelay: 2.5    
   });
 
   blink
@@ -39,7 +37,8 @@ const blink = gsap.timeline({
     0.15
   );
 
-  let books = document.querySelector("#books");
+
+  
   const move_books = gsap.timeline({paused: true});
   move_books
     .to("#left_side_books", {
@@ -57,6 +56,7 @@ const blink = gsap.timeline({
       duration: 0.3
     }, 0);
   
+  let books = document.querySelector("#books");
   books.addEventListener("mouseover", () => {
     move_books.play();
   });
@@ -64,22 +64,100 @@ const blink = gsap.timeline({
     move_books.reverse();
   });
 
-  const setTheBooks = gsap.timeline();
-  setTheBooks
+
+   // radio animation
+  let radio = document.querySelector("#radio");
+
+  const floating_radio = gsap.timeline({
+    paused:true
+  });
+  floating_radio
+    .to(radio, {y:-10, rotation:2, duration: .2})
+    .to(radio, {y:0, rotation: 0, ease:"bounce"});
+    
+    radio.addEventListener("mouseover", () => {
+      floating_radio.play();
+    });
+
+
+  // set up shelf animation
+  const setTheShelf = gsap.timeline();
+  setTheShelf
+    .fromTo("#radio", 
+      {y:-10, x:10, rotation:5, ease:"myBounce", duration: 1},
+      {y:0, x:0, rotation:0, duration: .5, ease:"myBounce-squash"},
+      1)
     .from("#left_side_books", {
       x:10,
-      duration: 0.3
+      duration: 1
     }, 1)
     .from("#right_side_books", {
       x: -10,
-      duration: 0.3
+      duration: 1
     }, 1)
     .from("#animated_book", {
       y: -15,
       x: 5,
       rotation: 5,
-      duration: 0.3
+      duration: 1
     }, 1);
 
+    //computer animation
+    let game = document.querySelector("#game");
+    let serious = document.querySelector("#serious_stuff");
+    const computerAnimation = gsap.timeline({
+      repeat:-1,
+      repeatDelay: 5
+    });
+    computerAnimation
+      .to(game, {
+        scale:0.01,
+        x: 120,
+        y:120,
+        duration: .3,
+        opacity: .5
+      }, 3)
+      .fromTo("#website_text",{
+        y: 100,
+        opacity: 0,
+      }, {
+        y: 0,
+        opacity: 1,
+        duration: 1
+      }, 5.75)
+      .fromTo("#grey_button, #brown_button", {
+        x: 20,
+        scale: 0.01,
+        opacity: .5
+      }, {
+        x: 0,
+        scale: 1,
+        opacity: 1,
+        ease:"elastic"
+      })
+      .to(game, {
+        scale: 1,
+        x: 0,
+        y: 0,
+        duration: .3,
+        opacity: 1
+      }, 20)
 
-  blink.play();
+
+
+    //game movement
+    document.addEventListener("mousemove", mouseMoveFunc);
+    let mountains = gsap.utils.toArray(".mountains");
+    function mouseMoveFunc(e) {
+        mountains.forEach((mountain, index) => {
+        const depth = 250;
+        const moveX = (e.pageX - window.innerWidth /2) / (4*depth);
+        const moveY = (e.pageY - window.innerHeight /2) / depth;
+        index ++
+
+          gsap.to(mountain, {
+            y: moveY * index,
+            x: -moveX * index
+          });
+        });
+    };

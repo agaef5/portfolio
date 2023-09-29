@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
 var color;
 var color_transparent;
 var bg = document.getElementsByClassName("project_description");
+var bg2 = document.getElementsByClassName("hero_text");
+
+
 
 function ChangeSVGColor() {
     var illustrations = document.getElementsByClassName("illustration");
@@ -45,6 +48,12 @@ function ChangeSVGColor() {
 function ChangeBgColor() {
     for (var i=0; i < bg.length; i++) {
         bg[i].style.backgroundColor = color_transparent;
+
+    };
+
+    for (var j=0; j < bg2.length; j++) {
+        bg2[j].style.backgroundColor = color_transparent;
+
     };
  };
 
@@ -101,7 +110,7 @@ function openAndClose() {
     for (var l = 0; l < show_paragraph.length; l++) {
         show_paragraph[l].classList.toggle('show');
     }
-}
+};
 
 //centering divs for
 const centeredDivs = document.querySelectorAll('.skill_description');
@@ -114,4 +123,10 @@ centeredDivs.forEach((div) => {
     div.style.left = `calc(50% - ${divWidth / 2}px)`;
 });
 
+function openGoodReads() {
+    // Define the Goodreads URL
+    var goodreadsUrl = "https://www.goodreads.com/user/show/160780355-agnieszka-furgalska";
 
+    // Open a new window or tab with the Goodreads URL
+    window.open(goodreadsUrl);
+}
