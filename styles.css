@@ -378,7 +378,9 @@ a {
     }
 }
 
-
+.project_page{
+    overflow-x: hidden;
+}
 
 
 .about_me_toggle{
