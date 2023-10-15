@@ -124,9 +124,28 @@ centeredDivs.forEach((div) => {
 });
 
 function openGoodReads() {
-    // Define the Goodreads URL
     var goodreadsUrl = "https://www.goodreads.com/user/show/160780355-agnieszka-furgalska";
-
-    // Open a new window or tab with the Goodreads URL
     window.open(goodreadsUrl);
 }
+
+
+
+//cat placement
+const svg = document.getElementById("cat");
+
+function updateViewBoxPosition() {
+
+  if (window.innerWidth < 768) {
+    svg.setAttribute(
+        "viewBox",
+        `0 -50 152 150`
+      );
+  } else {
+    svg.setAttribute(
+        "viewBox",
+        `0 0 152 150`
+      );
+  }
+}
+window.addEventListener("resize", updateViewBoxPosition);
+updateViewBoxPosition();

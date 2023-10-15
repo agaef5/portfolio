@@ -48,6 +48,7 @@ body, html {
     left: 20vw;
 }
 
+
 /* reused font styles - start */
 h1 {
     font-weight: 800;
@@ -139,6 +140,7 @@ a {
 
 /* grainy background - start */
 .grainy {
+    z-index: 1;
     position: fixed;
     top: -50%;
     left: -50%;
@@ -441,12 +443,14 @@ transform: rotate(45deg);
     
 }
 
+
 .svg_container:hover .skill_description{
     visibility: visible;
     opacity: 1;
 }
 
 .skill_description{
+    z-index: 3;
     visibility: hidden;
     opacity: 0;
     position: absolute;
@@ -505,14 +509,49 @@ transform: rotate(45deg);
     display: block;
 }
 
-.radio_button {
+
+#books, #computer, .radio_button{
     cursor: pointer;
 }
 
-#books{
-    cursor: pointer;
+.small_illustration{
+    display: none;
 }
 
-#computer{
-    cursor: pointer;
+.desk_illustration{
+    z-index: 1;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .big_illustration{
+        display: none;
+    }
+
+    .small_illustration{
+        display: block!important;
+    }
+
+    .home_container{
+        gap: 5svh;
+    }
+
+    .cat{
+         
+        top: 0!important;
+        left: 5svw;
+    }
+
+
+    #cat{
+        transform-origin: center center;
+        transform: rotate(180deg);
+    }
+
+    .cat #tail {
+        display: none;
+    }
+
+}
+
+

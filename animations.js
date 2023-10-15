@@ -102,12 +102,15 @@ const blink = gsap.timeline({
       duration: 1
     }, 1);
 
-    //computer animation
-    let game = document.querySelector("#game");
-    let serious = document.querySelector("#serious_stuff");
+    // computer animation
+    let game = document.querySelectorAll(".game");
+    let serious = document.querySelectorAll(".serious_stuff");
     const computerAnimation = gsap.timeline({
       repeat:-1,
-      repeatDelay: 5
+      repeatDelay: 3
+    });
+    const sunset = gsap.timeline({
+      paused: true
     });
     computerAnimation
       .to(game, {
@@ -116,16 +119,16 @@ const blink = gsap.timeline({
         y:120,
         duration: .3,
         opacity: .5
-      }, 3)
-      .fromTo("#website_text",{
+      })
+      .fromTo(".website_text",{
         y: 100,
         opacity: 0,
       }, {
         y: 0,
         opacity: 1,
         duration: 1
-      }, 5.75)
-      .fromTo("#grey_button, #brown_button", {
+      }, 1.2)
+      .fromTo(".grey_button, .brown_button", {
         x: 20,
         scale: 0.01,
         opacity: .5
@@ -135,14 +138,22 @@ const blink = gsap.timeline({
         opacity: 1,
         ease:"elastic"
       })
+      .fromTo(".sun", {
+        y: -20,
+        x: -10,
+      }, {
+        x:10,
+        y:10,
+        duration: 5,
+        ease:"power1"
+      }, 8.2)
       .to(game, {
         scale: 1,
         x: 0,
         y: 0,
         duration: .3,
         opacity: 1
-      }, 20)
-
+      }, 8)
 
 
     //game movement
@@ -161,3 +172,30 @@ const blink = gsap.timeline({
           });
         });
     };
+
+
+  gsap.set("#mouse_follow", {xPercent: 0, yPercent: 0});
+
+  const ball = document.querySelector("#mouse_follow");
+  const pos = { x: window.innerWidth, y: window.innerHeight};
+  const mouse = { x: pos.x, y: pos.y };
+  const speed = 0.2;
+
+  const xSet = gsap.quickSetter(ball, "x", "px");
+  const ySet = gsap.quickSetter(ball, "y", "px");
+
+  window.addEventListener("mousemove", e => {    
+    mouse.x = e.x;
+    mouse.y = e.y;  
+  });
+
+  gsap.ticker.add(() => {
+    
+    // adjust speed for higher refresh monitors
+    const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio()); 
+    
+    pos.x += (mouse.x - pos.x) * dt;
+    pos.y += (mouse.y - pos.y) * dt;
+    xSet(pos.x);
+    ySet(pos.y);
+  });
