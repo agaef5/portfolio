@@ -367,6 +367,11 @@ a {
     
 }
 
+.braindump{
+    background-image: url("images/projects/BrainDump/tile-image.png");
+
+}
+
 @media only screen and (max-width: 768px) {
     
     .project_description {
@@ -470,6 +475,11 @@ transform: rotate(45deg);
 }
 .workspaces{
     background-image: url(images/projects/HiddenWorkspacesInAarhus/background.jpg);
+}
+
+.braindump-bg{
+    background-image: url(images/projects/BrainDump/background.png);
+
 }
 
 .hero_text{
